@@ -1,0 +1,50 @@
+.wrap {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+h1 {
+  font-size: 15px;
+  color: #fff;
+  font-weight: 400;
+  word-spacing: -1px;
+  letter-spacing: 1px;
+}
+
+h1 span:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+h1 span:nth-child(2) {
+  animation-delay: 400ms;
+}
+
+h1 span:nth-child(3) {
+  animation-delay: 800ms;
+}
+
+.loading {
+  width: 300px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.loading span {
+  display: block;
+  height: 8px;
+  background: white;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.1;
+  }
+}
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

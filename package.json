@@ -1,6 +1,6 @@
 {
   "name": "@zpteam/react-xpla-unity-game",
-  "version": "0.0.2-beta.1",
+  "version": "0.1.0",
   "description": "The JavaScript SDK for XPLA with unity game.",
   "author": "zpt <978team@gmail.com>",
   "license": "MIT",

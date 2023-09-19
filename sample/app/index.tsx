@@ -1,4 +1,4 @@
-import React from 'react';
+import { CSSProperties } from 'react';
 
 import { useRegisterEvent, XplaUnityGameContainer } from '../../src';
 
@@ -8,7 +8,7 @@ const App = () => {
   // ---------------------------------------------
   useRegisterEvent();
 
-  const style: React.CSSProperties = {
+  const style: CSSProperties = {
     width: '100vw',
     height: '100vh',
   };

@@ -223,9 +223,6 @@ The default setting is the same as XplaUnityGameWithWalletProvider.
 XplaUnityGameContainer is a wrapper component of react-unity-webgl's Unity component.
 
 ```jsx
-// loading image or icon
-const loading = <img src="IMAGE_LINK" alt="" />;
-
 // Update Unity component style
 // Changed the default width of 60% to 70%
 const style: React.CSSProperties = {
@@ -233,7 +230,7 @@ const style: React.CSSProperties = {
 }
 
 return (
-  <XplaUnityGameContainer loading={loading} style={style} />
+  <XplaUnityGameContainer style={style} loading />
 )
 
 ```

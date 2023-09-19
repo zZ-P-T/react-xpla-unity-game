@@ -1,13 +1,13 @@
 import './container.css';
 
-import { ReactNode } from 'react';
+import { CSSProperties } from 'react';
 import { Unity } from 'react-unity-webgl';
 
 import { useXplaUnityGame } from './context';
 
 export interface XplaUnityGameContainerProps {
-  loading?: ReactNode;
-  style?: React.CSSProperties;
+  loading?: boolean;
+  style?: CSSProperties;
 }
 
 export const XplaUnityGameContainer = ({
@@ -18,34 +18,36 @@ export const XplaUnityGameContainer = ({
     unityContextHook: { unityProvider, isLoaded, loadingProgression },
   } = useXplaUnityGame();
 
-  const defaultStyle: React.CSSProperties = {
+  const defaultStyle: CSSProperties = {
     width: '100vw',
     height: '100hw',
   };
 
   const loadingPercentage = Math.round(loadingProgression * 100);
 
+  const renderLoading = () => {
+    if (!isLoaded && loading) {
+      return (
+        <div className="wrap">
+          <h1>
+            Loading
+            <span className="animate-pulse">.</span>
+            <span className="animate-pulse">.</span>
+            <span className="animate-pulse">.</span>
+          </h1>
+          <div className="loading">
+            <span style={{ width: `${loadingPercentage}%` }} />
+          </div>
+        </div>
+      );
+    }
+
+    return null;
+  };
+
   return (
     <>
-      {isLoaded === false && (
-        <div className="wrap">
-          <>
-            {loading && (
-              <>
-                <h1>
-                  Loading
-                  <span className="animate-pulse">.</span>
-                  <span className="animate-pulse">.</span>
-                  <span className="animate-pulse">.</span>
-                </h1>
-                <div className="loading">
-                  <span style={{ width: `${loadingPercentage}%` }} />
-                </div>
-              </>
-            )}
-          </>
-        </div>
-      )}
+      <>{renderLoading()}</>
 
       <Unity
         style={{

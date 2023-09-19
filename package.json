@@ -1,6 +1,6 @@
 {
   "name": "@zpteam/react-xpla-unity-game",
-  "version": "0.0.1-beta.1",
+  "version": "0.0.1-beta.15",
   "description": "The JavaScript SDK for XPLA with unity game.",
   "author": "zpt <978team@gmail.com>",
   "license": "MIT",
@@ -18,6 +18,10 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zZ-P-T/react-xpla-unity-game.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
